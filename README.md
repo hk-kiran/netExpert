@@ -11,7 +11,7 @@ Model = llama3.2
     conda activate cs260
     ```
 
-2. Install ollama on your system
+2. Install ollama on your system https://ollama.com/download
 3. Setup database `python prepare_db.py`
 
 ### Run the app
