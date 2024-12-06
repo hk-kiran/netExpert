@@ -12,7 +12,8 @@ Model = llama3.2
     ```
 
 2. Install ollama on your system https://ollama.com/download
-3. Setup database `python prepare_db.py`
+3. Download llama3.2 on ollama. Open a terminal and run `ollama pull llama3.2`
+4. Setup database `python prepare_db.py`
 
 ### Run the app
 
