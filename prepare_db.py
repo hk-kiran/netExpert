@@ -12,7 +12,7 @@ loader = PyPDFDirectoryLoader("data/")
 
 docs = loader.load()
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-    chunk_size=100, chunk_overlap=50
+    chunk_size=500, chunk_overlap=50
 )
 doc_splits = text_splitter.split_documents(docs)
 

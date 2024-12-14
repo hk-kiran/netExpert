@@ -1,6 +1,7 @@
 import streamlit as st
 from graph import agent
 from langchain_ollama import ChatOllama
+from langchain_core.prompts import PromptTemplate
 
 # Page configuration
 st.set_page_config(
@@ -82,5 +83,6 @@ if st.button("Ask Question", type="primary"):
         with col2:
             no_rag_placeholder.empty() 
             with st.spinner("Generating response ..."):
+                inputs = {"messages": [("user", user_input)]}
                 simple_response = model.invoke(user_input)
                 no_rag_placeholder.markdown(simple_response.content)
