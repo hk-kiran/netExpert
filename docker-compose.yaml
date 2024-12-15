@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ollama:
-    image: ollama:latest
+    image: khire001/ollama:latest
     container_name: ollama
     command: serve
     ports:
@@ -16,7 +16,7 @@ services:
     #           count: 1 
     #           capabilities: [gpu]
   app:
-    image: netexp:latest
+    image: khire001/netexp:latest
     container_name: netexp
     command: streamlit run streamlit.py --browser.serverAddress localhost
     ports:
