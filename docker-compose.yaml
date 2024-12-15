@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama:latest
+    container_name: ollama
+    command: serve
+    ports:
+      - "11434:11434"
+    restart: always
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1 
+    #           capabilities: [gpu]
+  app:
+    image: netexp:latest
+    container_name: netexp
+    command: streamlit run streamlit.py --browser.serverAddress localhost
+    ports:
+      - "8501:8501"
+    restart: always
